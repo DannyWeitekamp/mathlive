@@ -1755,8 +1755,8 @@ If you are using Vue, this may be because you are using the runtime-only build o
     }
   }
 
-  onInput(text: string): void {
-    onInput(this, text);
+  onInput(text: string, options?: InsertOptions): void {
+    onInput(this, text, options);
   }
 
   onKeystroke(evt: KeyboardEvent): boolean {
