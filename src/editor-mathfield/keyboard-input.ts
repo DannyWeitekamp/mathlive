@@ -490,6 +490,7 @@ export function onInput(
     feedback?: boolean;
     mode?: ParseMode;
     simulateKeystroke?: boolean;
+    scrollIntoView?: boolean;
   }
 ): void {
   const { model } = mathfield;
@@ -576,7 +577,9 @@ export function onInput(
   //    and make sure the caret is visible
   //
   mathfield.dirty = true;
-  mathfield.scrollIntoView();
+  if(options.scrollIntoView){
+    mathfield.scrollIntoView();
+  }
 }
 
 function getLeftSiblings(mf: _Mathfield): Atom[] {
